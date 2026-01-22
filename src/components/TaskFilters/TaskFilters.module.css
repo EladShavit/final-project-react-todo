@@ -1,0 +1,86 @@
+.filtersRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.filterGroup {
+  display: inline-flex;
+  gap: 8px;
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 6px;
+}
+
+.filterButton {
+  border: none;
+  background: transparent;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: var(--muted);
+  transition: color 0.2s ease, background 0.2s ease, transform 0.1s ease;
+}
+
+.filterButton:hover {
+  color: var(--text);
+  background: #fff;
+}
+
+.filterButton:active {
+  transform: translateY(1px);
+}
+
+.active {
+  background: #fff;
+  color: var(--text);
+  box-shadow: 0 4px 10px rgba(2, 6, 23, 0.04);
+}
+
+.meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.count {
+  color: var(--muted);
+}
+
+.clearButton {
+  border: 1px solid var(--border);
+  background: #fff;
+  border-radius: 10px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, transform 0.1s ease;
+}
+
+.clearButton:hover:not(:disabled) {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+.clearButton:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.clearButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 520px) {
+  .filtersRow {
+    align-items: flex-start;
+  }
+
+  .meta {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
